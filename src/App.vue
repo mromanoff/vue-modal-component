@@ -1,28 +1,113 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div class="p-8">
+      <div class="max-w-sm mx-auto">
+        <div class="p-8 mb-4 text-center">
+          <button @click="modalOpen = true" type="button" class="btn btn-blue">
+            Open Modal
+          </button>
+        </div>
+        <p class="mb-6">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+          vehicula aliquam sem quis ornare. Phasellus laoreet tempus nisl, eu
+          hendrerit tortor molestie in. Curabitur non neque placerat, tempus
+          mauris eu, convallis urna. Morbi finibus sit amet est eget accumsan.
+          Nulla et sagittis risus, in rutrum diam. Cras convallis mauris
+          accumsan mattis porta. Pellentesque iaculis dictum dolor id euismod.
+          Vivamus a ligula metus. Pellentesque efficitur lacus ex, a fringilla
+          dui pellentesque at. Vestibulum faucibus, dui et feugiat efficitur,
+          tortor leo pulvinar lacus, eget cursus erat turpis quis quam. Nullam
+          pharetra lorem ut odio fermentum viverra. Aenean lobortis elit viverra
+          urna congue posuere at ac enim.
+        </p>
+        <p class="mb-6">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+          vehicula aliquam sem quis ornare. Phasellus laoreet tempus nisl, eu
+          hendrerit tortor molestie in. Curabitur non neque placerat, tempus
+          mauris eu, convallis urna. Morbi finibus sit amet est eget accumsan.
+          Nulla et sagittis risus, in rutrum diam. Cras convallis mauris
+          accumsan mattis porta. Pellentesque iaculis dictum dolor id euismod.
+          Vivamus a ligula metus. Pellentesque efficitur lacus ex, a fringilla
+          dui pellentesque at. Vestibulum faucibus, dui et feugiat efficitur,
+          tortor leo pulvinar lacus, eget cursus erat turpis quis quam. Nullam
+          pharetra lorem ut odio fermentum viverra. Aenean lobortis elit viverra
+          urna congue posuere at ac enim.
+        </p>
+        <p class="mb-6">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+          vehicula aliquam sem quis ornare. Phasellus laoreet tempus nisl, eu
+          hendrerit tortor molestie in. Curabitur non neque placerat, tempus
+          mauris eu, convallis urna. Morbi finibus sit amet est eget accumsan.
+          Nulla et sagittis risus, in rutrum diam. Cras convallis mauris
+          accumsan mattis porta. Pellentesque iaculis dictum dolor id euismod.
+          Vivamus a ligula metus. Pellentesque efficitur lacus ex, a fringilla
+          dui pellentesque at. Vestibulum faucibus, dui et feugiat efficitur,
+          tortor leo pulvinar lacus, eget cursus erat turpis quis quam. Nullam
+          pharetra lorem ut odio fermentum viverra. Aenean lobortis elit viverra
+          urna congue posuere at ac enim.
+        </p>
+        <p class="mb-6">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+          vehicula aliquam sem quis ornare. Phasellus laoreet tempus nisl, eu
+          hendrerit tortor molestie in. Curabitur non neque placerat, tempus
+          mauris eu, convallis urna. Morbi finibus sit amet est eget accumsan.
+          Nulla et sagittis risus, in rutrum diam. Cras convallis mauris
+          accumsan mattis porta. Pellentesque iaculis dictum dolor id euismod.
+          Vivamus a ligula metus. Pellentesque efficitur lacus ex, a fringilla
+          dui pellentesque at. Vestibulum faucibus, dui et feugiat efficitur,
+          tortor leo pulvinar lacus, eget cursus erat turpis quis quam. Nullam
+          pharetra lorem ut odio fermentum viverra. Aenean lobortis elit viverra
+          urna congue posuere at ac enim.
+        </p>
+        <p class="mb-6">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+          vehicula aliquam sem quis ornare. Phasellus laoreet tempus nisl, eu
+          hendrerit tortor molestie in. Curabitur non neque placerat, tempus
+          mauris eu, convallis urna. Morbi finibus sit amet est eget accumsan.
+          Nulla et sagittis risus, in rutrum diam. Cras convallis mauris
+          accumsan mattis porta. Pellentesque iaculis dictum dolor id euismod.
+          Vivamus a ligula metus. Pellentesque efficitur lacus ex, a fringilla
+          dui pellentesque at. Vestibulum faucibus, dui et feugiat efficitur,
+          tortor leo pulvinar lacus, eget cursus erat turpis quis quam. Nullam
+          pharetra lorem ut odio fermentum viverra. Aenean lobortis elit viverra
+          urna congue posuere at ac enim.
+        </p>
+        <p class="mb-6">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+          vehicula aliquam sem quis ornare. Phasellus laoreet tempus nisl, eu
+          hendrerit tortor molestie in. Curabitur non neque placerat, tempus
+          mauris eu, convallis urna. Morbi finibus sit amet est eget accumsan.
+          Nulla et sagittis risus, in rutrum diam. Cras convallis mauris
+          accumsan mattis porta. Pellentesque iaculis dictum dolor id euismod.
+          Vivamus a ligula metus. Pellentesque efficitur lacus ex, a fringilla
+          dui pellentesque at. Vestibulum faucibus, dui et feugiat efficitur,
+          tortor leo pulvinar lacus, eget cursus erat turpis quis quam. Nullam
+          pharetra lorem ut odio fermentum viverra. Aenean lobortis elit viverra
+          urna congue posuere at ac enim.
+        </p>
+      </div>
+    </div>
+
+    <modal
+      :show="modalOpen"
+      @close="modalOpen = false"
+    ></modal>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Modal from "./components/Modal.vue";
 
 export default {
-  name: "app",
   components: {
-    HelloWorld
+    Modal
+  },
+  data() {
+    return {
+      modalOpen: false
+    };
   }
 };
 </script>
 
-<style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style src="./assets/css/app.css" />
