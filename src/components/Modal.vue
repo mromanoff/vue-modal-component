@@ -13,7 +13,7 @@
         have it, simply because it is pain..."
       </p>
       <div class="text-center">
-        <button @click="dismiss" type="button" class="btn btn-blue">
+        <button @click="dismiss" type="button" class="btn btn-indigo">
           Dismiss
         </button>
       </div>

@@ -3,8 +3,11 @@
     <div class="p-8">
       <div class="max-w-sm mx-auto">
         <div class="p-8 mb-4 text-center">
-          <button @click="modalOpen = true" type="button" class="btn btn-blue">
+          <button @click="modalOpen = true" type="button" class="btn btn-indigo">
             Open Modal
+            <portal to="modals">
+              <modal :show="modalOpen" @close="modalOpen = false"></modal>
+            </portal>
           </button>
         </div>
         <p class="mb-6">
@@ -88,10 +91,7 @@
       </div>
     </div>
 
-    <modal
-      :show="modalOpen"
-      @close="modalOpen = false"
-    ></modal>
+    <portal-target name="modals"> </portal-target>
   </div>
 </template>
 
