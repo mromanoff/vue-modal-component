@@ -3,11 +3,18 @@
     <div class="p-8">
       <div class="max-w-sm mx-auto">
         <div class="p-8 mb-4 text-center">
-          <button @click="modalOpen = true" type="button" class="btn btn-indigo">
+<!--          <primary-button @click="showModal = true">-->
+<!--            Open Modal-->
+<!--            <modal :show="showModal" @close="showModal = false"></modal>-->
+<!--          </primary-button>-->
+
+          <button
+            @click="showModal = true"
+            type="button"
+            class="btn btn-indigo"
+          >
             Open Modal
-            <portal to="modals">
-              <modal :show="modalOpen" @close="modalOpen = false"></modal>
-            </portal>
+            <modal :show="showModal" @close="showModal = false"></modal>
           </button>
         </div>
         <p class="mb-6">
@@ -97,14 +104,16 @@
 
 <script>
 import Modal from "./components/Modal.vue";
+import PrimaryButton from "./components/PrimaryButton";
 
 export default {
   components: {
-    Modal
+    Modal,
+    PrimaryButton
   },
   data() {
     return {
-      modalOpen: false
+      showModal: false
     };
   }
 };
