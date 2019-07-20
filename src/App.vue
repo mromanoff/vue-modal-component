@@ -16,6 +16,18 @@
             Open Modal
             <modal :show="showModal" @close="showModal = false"></modal>
           </button>
+
+
+<!--          <button-->
+<!--                  @click="showModal = true"-->
+<!--                  type="button"-->
+<!--                  class="btn btn-indigo"-->
+<!--          >-->
+<!--            Open AdHoc Modal-->
+<!--            <base-modal :show="showModal" @close="showModal = false">-->
+<!--              <h1>Base Modal (AdHoc)</h1>-->
+<!--            </base-modal>-->
+<!--          </button>-->
         </div>
         <p class="mb-6">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
@@ -104,11 +116,13 @@
 
 <script>
 import Modal from "./components/Modal.vue";
+import BaseModal from "./components/BaseModal.vue";
 import PrimaryButton from "./components/PrimaryButton";
 
 export default {
   components: {
     Modal,
+    BaseModal,
     PrimaryButton
   },
   data() {

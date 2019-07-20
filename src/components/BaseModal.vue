@@ -1,7 +1,7 @@
 <template>
   <portal to="modals" v-if="show">
-    <div class="modal-backdrop">
-      <div class="modal">
+    <div class="modal-backdrop" ref="backdrop">
+      <div class="modal" ref="modal">
         <slot></slot>
       </div>
     </div>
@@ -42,6 +42,20 @@ export default {
     document.addEventListener("keydown", escapeHandler);
     this.$once("hook:destroyed", () => {
       document.removeEventListener("keydown", escapeHandler);
+    });
+  },
+  mounted() {
+    const listener = e => {
+      if (e.target === this.$refs.backdrop) {
+        this.dismiss();
+      } else {
+        return;
+      }
+    };
+
+    document.addEventListener("click", listener);
+    this.$once("hook:beforeDestroy", () => {
+      document.removeEventListener("click", listener);
     });
   }
 };
