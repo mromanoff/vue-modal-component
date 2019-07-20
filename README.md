@@ -1,5 +1,9 @@
 # vue-modal-component
 
+1. dismiss on backdrop click
+2. dismiss on ESC key press
+3. Background content scroll is disabled by default ```preventBackgroundScrolling: true```
+
 ## Project setup
 ```
 npm install
